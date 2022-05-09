@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Head from 'next/head'
+import Image from 'next/image'
 import ImageGallery from '../components/image-gallery'
 import LogoIcon from '../assets/logo.svg'
 import ConversationIcon from '../assets/conversation.svg'
@@ -53,11 +54,13 @@ export default function Home() {
                     Upload
                   </button>
                 </li>
-                <li className='w-10 border border-gray-200 rounded-full'>
-                  <img
-                    className='object-cover w-10 h-10 rounded-full'
+                <li className='relative w-10 h-10 border border-gray-200 rounded-full'>
+                  <Image
+                    className='rounded-full'
                     src='/avatar-1.jpeg'
-                    alt='avatar'
+                    alt='avatar-1'
+                    layout='fill'
+                    objectFit='cover'
                   />
                 </li>
                 <li className='flex items-center gap-x-1'>
@@ -92,11 +95,15 @@ export default function Home() {
                 <div className='flex'>
                   <span>Curated by</span>
                   <span className='flex items-center pl-2 gap-x-1'>
-                    <img
-                      className='object-cover w-6 h-6 rounded-full'
-                      src='/avatar-2.jpeg'
-                      alt='avatar-2'
-                    />
+                    <div className='relative w-6 h-6 rounded-full'>
+                      <Image
+                        className='rounded-full'
+                        src='/avatar-2.jpeg'
+                        alt='avatar-2'
+                        layout='fill'
+                        objectFit='cover'
+                      />
+                    </div>
                     <span>Alan Prince</span>
                   </span>
                 </div>
