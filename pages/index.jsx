@@ -1,7 +1,5 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import Head from 'next/head'
-import useSwr from 'swr'
 import ImageGallery from '../components/image-gallery'
 import LogoIcon from '../assets/logo.svg'
 import ConversationIcon from '../assets/conversation.svg'
