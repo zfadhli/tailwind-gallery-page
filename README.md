@@ -4,6 +4,7 @@ This is a next.js application for unsplash gallery
 
 ## Features
 
+- Tailwindcss for styling
 - SWR for data fetching
 - Infinite loading image
 - Image optimization with next/image
