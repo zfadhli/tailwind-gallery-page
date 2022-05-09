@@ -33,7 +33,7 @@ export default function Home() {
                 <li className='hover:font-semibold'>Discover</li>
                 <li className='hover:font-semibold'>Community</li>
               </ul>
-              <form className='flex-1'>
+              <form className='flex-1' onSubmit={(e) => e.preventDefault()}>
                 <label htmlFor='search' className='relative text-gray-600'>
                   <span className='absolute inset-y-0 left-0 flex items-center pl-3'>
                     <SearchIcon className='w-5 h-5' />
