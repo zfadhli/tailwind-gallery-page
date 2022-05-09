@@ -1,6 +1,6 @@
 # Tailwind Unsplash Gallery
 
-This is a next.js application for unsplash gallery.
+This is a next.js application for unsplash gallery. Deployed on [https://tailwind-unsplash-gallery.vercel.app/](https://tailwind-unsplash-gallery.vercel.app/)
 
 ## Features
 
