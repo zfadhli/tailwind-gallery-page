@@ -1,6 +1,7 @@
 import useSWRInfinite from 'swr/infinite'
 import ImageCard from '../components/image-card'
 import LoadButton from './load-button'
+import SpinnerIcon from '../assets/spinner.svg'
 
 const fetcher = (url) => fetch(url).then((res) => res.json())
 const ACCESS_KEY = process.env.NEXT_PUBLIC_UNSPLASH_ACCESS_KEY
@@ -21,7 +22,7 @@ export default function ImageGallery() {
   const isRefreshing = isValidating && data && data.length === size
 
   if (error) return 'An error has occurred.'
-  if (!data) return 'Loading...'
+  if (!data) return <SpinnerIcon className='w-6 h-6' />
   return (
     <>
       <div className='gap-8 pt-2 columns-2xs [column-fill:_balance]'>

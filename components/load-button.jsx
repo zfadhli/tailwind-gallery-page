@@ -1,3 +1,5 @@
+import SpinnerIcon from '../assets/spinner.svg'
+
 export default function LoadButton({ isLoadingMore, isReachingEnd, size, setSize }) {
   return (
     <>
@@ -6,7 +8,13 @@ export default function LoadButton({ isLoadingMore, isReachingEnd, size, setSize
         disabled={isLoadingMore || isReachingEnd}
         onClick={() => setSize(size + 1)}
       >
-        Load more...
+        {isLoadingMore ? (
+          <SpinnerIcon className='w-6 h-6' />
+        ) : isReachingEnd ? (
+          'No more images'
+        ) : (
+          'Load more...'
+        )}
       </button>
     </>
   )
