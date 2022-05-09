@@ -1,6 +1,6 @@
 # Tailwind Unsplash Gallery
 
-This is a next.js application for unsplash gallery
+This is a next.js application for unsplash gallery.
 
 ## Features
 
