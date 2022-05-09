@@ -11,18 +11,7 @@ import SpinnerIcon from '../assets/spinner.svg'
 import StarIcon from '../assets/star.svg'
 import SearchIcon from '../assets/search.svg'
 
-const fetcher = (url) => fetch(url).then((res) => res.json())
-const ACCESS_KEY = process.env.NEXT_PUBLIC_UNSPLASH_ACCESS_KEY
-
 export default function Home() {
-  const { data, error } = useSwr(
-    `https://api.unsplash.com/search/photos?client_id=${ACCESS_KEY}&query=people%20and%20nature`,
-    fetcher,
-  )
-  console.log({ data })
-
-  if (error) return <div>failed to load</div>
-
   return (
     <>
       <Head>
@@ -123,20 +112,10 @@ export default function Home() {
               </ul>
             </div>
             <div className='pt-8'>
-              <div className='gap-6 pt-2 columns-3xs'>
-                <ImageGallery />
-              </div>
-              <div className='flex items-center justify-center py-12'>
-                <SpinnerIcon className='w-8 h-8 text-indigo-600 animate-spin' />
-              </div>
+              <ImageGallery />
             </div>
-            )
           </div>
         </section>
-        {/* <Fire className='w-20 mb-8' />
-        <div className='relative w-[400px] h-[500px]'>
-          <Image src='/avatar-1.jpeg' alt='avatar' layout='fill' objectFit='contain' />
-        </div> */}
       </div>
     </>
   )

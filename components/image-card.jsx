@@ -6,6 +6,7 @@ export default function ImageCard({ image }) {
       <figure className='py-4 [break-inside:avoid]' key={image.id}>
         {/* <img className='rounded-md' src={image.urls.full} alt={image.alt_description} /> */}
         <Image
+          className='rounded-md'
           src={image.urls.regular}
           alt={image.alt_description}
           width={image.width}

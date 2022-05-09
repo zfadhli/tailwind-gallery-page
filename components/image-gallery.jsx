@@ -1,20 +1,40 @@
-import useSWR from 'swr'
+import useSWRInfinite from 'swr/infinite'
 import ImageCard from '../components/image-card'
+import LoadButton from './load-button'
 
 const fetcher = (url) => fetch(url).then((res) => res.json())
-const UNSPLASH_URL = `https://api.unsplash.com/search/photos?client_id=${process.env.NEXT_PUBLIC_UNSPLASH_ACCESS_KEY}&page=2&query=nature`
+const ACCESS_KEY = process.env.NEXT_PUBLIC_UNSPLASH_ACCESS_KEY
+const PAGE_SIZE = 10
 
 export default function ImageGallery() {
-  const { data, error } = useSWR(UNSPLASH_URL, fetcher)
-  console.log(data)
+  const { data, error, mutate, size, setSize, isValidating } = useSWRInfinite(
+    (index) =>
+      `https://api.unsplash.com/search/photos?client_id=${ACCESS_KEY}&per_page=${PAGE_SIZE}&page=${
+        index + 1
+      }&query=nature`,
+    fetcher,
+  )
+
+  const images = data ? [...data] : []
+  const isEmpty = data?.[0]?.length === 0
+  const isReachingEnd = isEmpty || (data && data[data.length - 1]?.length < PAGE_SIZE)
+  const isRefreshing = isValidating && data && data.length === size
 
   if (error) return 'An error has occurred.'
   if (!data) return 'Loading...'
   return (
     <>
-      {data?.results?.map((image) => (
-        <ImageCard image={image} />
-      ))}
+      <div className='gap-8 pt-2 columns-2xs [column-fill:_balance]'>
+        {images.map((imageList) => imageList.results.map((image) => <ImageCard image={image} />))}
+      </div>
+      <div className='flex items-center justify-center py-12'>
+        <LoadButton
+          isReachingEnd={isReachingEnd}
+          isRefreshing={isRefreshing}
+          size={size}
+          setSize={setSize}
+        />
+      </div>
     </>
   )
 }
