@@ -11,7 +11,7 @@ export default function ImageGallery() {
     (index) =>
       `https://api.unsplash.com/search/photos?client_id=${ACCESS_KEY}&per_page=${PAGE_SIZE}&page=${
         index + 1
-      }&query=nature`,
+      }&query=people%20and%20nature`,
     fetcher,
   )
 
