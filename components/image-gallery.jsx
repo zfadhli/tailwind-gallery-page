@@ -27,13 +27,9 @@ export default function ImageGallery() {
   return (
     <>
       <div className='gap-8 pt-2 columns-2xs [column-fill:_balance]'>
-        {images.map((i) => (
-          <div key={i[0]?.results[0]?.id}>
-            {i?.results?.map((image) => (
-              <ImageCard image={image} />
-            ))}
-          </div>
-        ))}
+        {images.map((i) => {
+          i?.results?.map((image) => <ImageCard image={image} key={image.id} />)
+        })}
       </div>
       <div className='flex items-center justify-center py-12'>
         <LoadButton

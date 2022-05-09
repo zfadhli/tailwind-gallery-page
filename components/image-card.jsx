@@ -3,7 +3,7 @@ import Image from 'next/image'
 export default function ImageCard({ image }) {
   return (
     <>
-      <figure className='py-4 [break-inside:avoid]' key={image.id}>
+      <figure className='py-4 [break-inside:avoid]'>
         {/* <img className='rounded-md' src={image.urls.full} alt={image.alt_description} /> */}
         <Image
           className='rounded-md'
