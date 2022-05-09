@@ -2,13 +2,14 @@ import useSWRInfinite from 'swr/infinite'
 import ImageCard from '../components/image-card'
 import LoadButton from './load-button'
 import SpinnerIcon from '../assets/spinner.svg'
+import { Fragment } from 'react'
 
 const fetcher = (url) => fetch(url).then((res) => res.json())
 const ACCESS_KEY = process.env.NEXT_PUBLIC_UNSPLASH_ACCESS_KEY
 const PAGE_SIZE = 10
 
 export default function ImageGallery() {
-  const { data, error, mutate, size, setSize, isValidating } = useSWRInfinite(
+  const { data, error, size, setSize, isValidating } = useSWRInfinite(
     (index) =>
       `https://api.unsplash.com/search/photos?client_id=${ACCESS_KEY}&per_page=${PAGE_SIZE}&page=${
         index + 1
@@ -26,7 +27,13 @@ export default function ImageGallery() {
   return (
     <>
       <div className='gap-8 pt-2 columns-2xs [column-fill:_balance]'>
-        {images.map((imageList) => imageList.results.map((image) => <ImageCard image={image} />))}
+        {images.map((i) => (
+          <div key={i[0]?.results[0]?.id}>
+            {i?.results?.map((image) => (
+              <ImageCard image={image} />
+            ))}
+          </div>
+        ))}
       </div>
       <div className='flex items-center justify-center py-12'>
         <LoadButton
