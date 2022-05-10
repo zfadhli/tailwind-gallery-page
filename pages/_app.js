@@ -1,4 +1,4 @@
-import '@fontsource/inter'
+import '@fontsource/inter/variable.css'
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {

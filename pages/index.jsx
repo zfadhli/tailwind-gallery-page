@@ -17,8 +17,8 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <div className='w-full min-h-screen text-gray-900 bg-gray-50 font-inter'>
-        <nav className='border-t-8 border-b border-gray-200'>
+      <div className='w-full min-h-screen text-slate-900 bg-slate-50 font-inter'>
+        <nav className='border-t-8 border-b border-slate-200'>
           <div className='container'>
             <div className='flex items-center justify-between h-20 gap-x-8'>
               <MenuIcon className='w-7 h-7 lg:hidden' />
@@ -28,17 +28,17 @@ export default function Home() {
                 </a>
               </Link>
               <ul className='items-center hidden cursor-pointer lg:flex gap-x-4'>
-                <li className='font-semibold'>Feed</li>
-                <li className='hover:font-semibold'>Discover</li>
-                <li className='hover:font-semibold'>Community</li>
+                <li className='font-medium'>Feed</li>
+                <li className='hover:font-medium'>Discover</li>
+                <li className='hover:font-medium'>Community</li>
               </ul>
               <form className='flex-1 hidden sm:inline-block' onSubmit={(e) => e.preventDefault()}>
-                <label htmlFor='search' className='relative text-gray-600'>
+                <label htmlFor='search' className='relative text-slate-600'>
                   <span className='absolute inset-y-0 left-0 flex items-center pl-3'>
                     <SearchIcon className='w-5 h-5' />
                   </span>
                   <input
-                    className='w-full py-2 pl-10 pr-5 text-gray-700 transition bg-gray-100 border rounded-full focus:outline-none focus:shadow-outline focus:bg-white focus:border-gray-200'
+                    className='w-full py-2 pl-10 pr-5 transition border rounded-full text-slate-700 bg-slate-100 focus:outline-none focus:shadow-outline focus:bg-white focus:border-slate-200'
                     type='text'
                     name='search'
                     id='search'
@@ -50,11 +50,11 @@ export default function Home() {
                   <ConversationIcon className='w-7 h-7' />
                 </li>
                 <li className='hidden lg:inline-block'>
-                  <button className='px-4 py-2 text-sm font-semibold border border-gray-200 rounded-full'>
+                  <button className='px-4 py-2 text-sm font-medium border rounded-full border-slate-200'>
                     Upload
                   </button>
                 </li>
-                <li className='relative w-10 h-10 border border-gray-200 rounded-full'>
+                <li className='relative w-10 h-10 border rounded-full border-slate-200'>
                   <Image
                     className='rounded-full'
                     src='/avatar-1.jpeg'
@@ -78,7 +78,7 @@ export default function Home() {
         <section className='section'>
           <div className='container'>
             <div className='flex items-center'>
-              <h1 className='text-3xl font-bold sm:text-4xl'>People &amp; Nature</h1>
+              <h1 className='text-3xl font-extrabold sm:text-4xl'>People &amp; Nature</h1>
               {/* <div className='ml-8 space-x-2'>
                 <button className='px-4 py-2 text-sm font-medium text-white bg-indigo-600 border-indigo-600 rounded-full'>
                   Follow
@@ -86,10 +86,10 @@ export default function Home() {
                 <button className='px-4 py-2 text-sm font-medium border rounded-full'>Edit</button>
               </div> */}
             </div>
-            <p className='pt-4 font-medium text-gray-700 sm:text-lg'>
+            <p className='pt-4 font-medium text-slate-700 sm:text-lg'>
               Photos that look like taken straight out of fairy tale book.
             </p>
-            <div className='pt-2 text-sm text-gray-500'>
+            <div className='pt-2 text-sm text-slate-500'>
               <div className='flex flex-col sm:flex-row gap-x-1'>
                 <div>36 photos from 24 people.</div>
                 <div className='flex'>
@@ -117,7 +117,7 @@ export default function Home() {
             <div>
               <ul className='flex items-center gap-x-4'>
                 <li className='text-lg font-bold'>Popular</li>
-                <li className='text-lg font-bold text-gray-400 hover:text-gray-900'>Recent</li>
+                <li className='text-lg font-bold text-slate-400 hover:text-slate-900'>Recent</li>
               </ul>
             </div>
             <div className='pt-8'>
