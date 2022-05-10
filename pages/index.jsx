@@ -125,6 +125,14 @@ export default function Home() {
             </div>
           </div>
         </section>
+        <section className='py-8 text-center'>
+          <div className='text-sm'>
+            Build with ❤ by{' '}
+            <a className='font-bold' href='https://github.com/zfadhli'>
+              zfadhli
+            </a>
+          </div>
+        </section>
       </div>
     </>
   )
